@@ -7,4 +7,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="tabsStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">15sp</item>
+<!--        <item name="android:borderlessButtonStyle">true</item>-->
+    </style>
 </resources>

@@ -4,7 +4,9 @@
     <color name="colorPrimaryDark">#263238</color>
     <color name="colorAccent">#03DAC5</color>
 
+    //PROJECT COLORS
     <color name="green">#78AD43</color>
-    <color name="black">#272727</color>
     <color name="light_green">#7CB342</color>
+    <color name="black">#272727</color>
+    <color name="white">#FFFFFF</color>
 </resources>
