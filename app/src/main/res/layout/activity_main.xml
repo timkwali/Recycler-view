@@ -6,19 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    //TAB-LAYOUT FOR TABS
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tlTabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabTextColor="@color/white"
-        app:tabTextAppearance="@style/tabsStyle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabTextAppearance="@style/tabsStyle"
+        app:tabTextColor="@color/white">
 
     </com.google.android.material.tabs.TabLayout>
 
+    //TITLE-TIMELINE
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tlTabs">
+
+        <TextView
+            android:id="@+id/tvLeaders"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/leaders"
+            android:paddingLeft="4dp"
+            android:layout_weight="1"
+            android:textSize="15sp" />
+
+        <Spinner
+            android:id="@+id/spTimeline"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    //VIEWPAGER FOR FRAGMENTS
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vpView"
         android:layout_width="match_parent"
@@ -27,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tlTabs">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
     </androidx.viewpager.widget.ViewPager>
 

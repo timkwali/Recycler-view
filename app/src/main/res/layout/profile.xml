@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="4dp">
 
+    //BLUEPRINT FOR SUBSEQUENT PROFILES
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp">
+        android:padding="8dp"
+        android:background="@color">
 
+        //PROFILE DETAILS
         <ImageView
             android:id="@+id/ivProfilePic"
             android:layout_width="50dp"
@@ -23,7 +26,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:textSize="13sp"
-            android:text="NAME  kjhgfghjkjhg"
+            android:text="NAME"
+            android:textColor="@color/white"
             app:layout_constraintStart_toEndOf="@+id/ivProfilePic"
             app:layout_constraintTop_toTopOf="@+id/ivProfilePic" />
 
@@ -33,7 +37,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:textSize="10sp"
-            android:text="ID  kjhgfghjkjhgfghj"
+            android:text="ID NUMBER"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/ivProfilePic"
             app:layout_constraintStart_toEndOf="@+id/ivProfilePic" />
 
@@ -42,6 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SERIAL NUMBER"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/tvId"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvName" />

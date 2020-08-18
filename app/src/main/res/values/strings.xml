@@ -3,4 +3,8 @@
     <string name="following">FOLLOWING</string>
     <string name="local">LOCAL</string>
     <string name="global">GLOBAL</string>
+    <string name="leaders">LEADERS</string>
+    <string name="all_time">ALL TIME</string>
+    <string name="last_week">LAST WEEK</string>
+    <string name="last_month">LAST MONTH</string>
 </resources>

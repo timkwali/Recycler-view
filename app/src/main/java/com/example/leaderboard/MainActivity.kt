@@ -38,13 +38,6 @@ class MainActivity : AppCompatActivity() {
 
         //SET CURRENT TAB
         view.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
-//        tabs.addOnTabSelectedListener(object : TabLayout.onTabSelectedListener {
-//            override fun onTabSelected(tab: TabLayout.Tab) {
-//               view.currentItem = tab.position
-//           }
-//            override fun onTabUnselected(tab: TabLayout.Tab) {}
-//            override fun onTabReselected(tab: TabLayout.Tab) {}
-//        })
         tabs.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
             override fun onTabSelected(tab: TabLayout.Tab) {
