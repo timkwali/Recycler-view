@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="tabsStyle" parent="TextAppearance.Design.Tab">
@@ -12,4 +13,11 @@
 <!--        <item name="android:borderlessButtonStyle">true</item>-->
     </style>
 
+    <style name="recyclerItem">
+        <item name="android:background">@color/light_green</item>
+    </style>
+
+    <style name="spinner">
+        <item name="android:textColor">@color/white</item>
+    </style>
 </resources>

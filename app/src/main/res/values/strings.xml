@@ -5,6 +5,11 @@
     <string name="global">GLOBAL</string>
     <string name="leaders">LEADERS</string>
     <string name="all_time">ALL TIME</string>
-    <string name="last_week">LAST WEEK</string>
-    <string name="last_month">LAST MONTH</string>
+
+    <string-array name="timeline">
+        <item name="all_time">All Time</item>
+        <item name="last_week">Last Week</item>
+        <item name="last_month">Last Month</item>
+    </string-array>
+
 </resources>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".MainActivity">
 
     //TAB-LAYOUT FOR TABS
@@ -12,19 +13,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tabTextAppearance="@style/tabsStyle"
-        app:tabTextColor="@color/white">
-
-    </com.google.android.material.tabs.TabLayout>
+        app:tabTextColor="@color/white"/>
 
     //TITLE-TIMELINE
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,15 +34,19 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/leaders"
+            android:textColor="@color/white"
             android:paddingLeft="4dp"
+            android:paddingTop="15dp"
             android:layout_weight="1"
-            android:textSize="15sp" />
+            android:textSize="15sp"/>
 
         <Spinner
             android:id="@+id/spTimeline"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:popupBackground="@color/black"
+            style="@style/spinner"/>
     </LinearLayout>
 
     //VIEWPAGER FOR FRAGMENTS
@@ -55,8 +58,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-    </androidx.viewpager.widget.ViewPager>
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

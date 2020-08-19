@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.profile.view.*
 
 //CREATE ADAPTER FOR THE RECYCLER
-class RecyclerAdapter(private val dataList: List<Data>): RecyclerView.Adapter<RecyclerAdapter.RecyclerViewHolder>() {
+class RecyclerAdapter(private val dataList: List<Data>, var clickListener: OnProfileClickListener):
+                      RecyclerView.Adapter<RecyclerAdapter.RecyclerViewHolder>() {
 
     //CREATE VIEW-HOLDER TO CREATE NEW INSTANCES OF THE BLUEPRINT
     class RecyclerViewHolder(item: View): RecyclerView.ViewHolder(item) {
@@ -17,6 +18,15 @@ class RecyclerAdapter(private val dataList: List<Data>): RecyclerView.Adapter<Re
         val name: TextView = item.tvName
         val id: TextView = item.tvId
         val serialNo: TextView = item.tvSerialNo
+
+        //GET PROFILE NAME FOR TOAST
+        fun initialize(dataList: Data, action: OnProfileClickListener) {
+            name.text =  dataList.name
+
+            itemView.setOnClickListener{
+                action.onItemClick(dataList, adapterPosition)
+            }
+        }
     }
 
     //CREATE PROFILE
@@ -32,8 +42,17 @@ class RecyclerAdapter(private val dataList: List<Data>): RecyclerView.Adapter<Re
         holder.name.text = currentProfile.name
         holder.id.text = currentProfile.id
         holder.serialNo.text = currentProfile.serialNo
+
+        holder.initialize(dataList[position], clickListener)
     }
 
+    //GET ITEM COUNT
     override fun getItemCount() = dataList.size
 
+}
+
+//SET LISTENER FOR PROFILE CLICK
+interface OnProfileClickListener {
+    fun onItemClick(dataList: Data, position: Int) {
+    }
 }

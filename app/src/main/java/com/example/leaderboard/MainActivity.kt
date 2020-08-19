@@ -3,12 +3,17 @@ package com.example.leaderboard
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,9 +33,6 @@ class MainActivity : AppCompatActivity() {
 
         //SET TAB ITEMS COLORS
         tabs.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary))
-//        tabs.tabTextColors(ContextCompat.getColor(this, R.color.white))
-
-
 
         //GET TABS-ADAPTER AND PUT IN VIEWPAGER
         var adapter = TabsAdapter(this, supportFragmentManager, tabs.tabCount)
@@ -42,11 +44,29 @@ class MainActivity : AppCompatActivity() {
             @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
             override fun onTabSelected(tab: TabLayout.Tab) {
                 view.currentItem = tab.position
-//                tabs.tabIconTint(ContextCompat.getColorStateList(this@MainActivity, R.color.decagonGreenDark))
-//                setTabIconTint(ContextCompat.getColorStateList(TabLayoutAndViewPagerActivity6.this, R.color.colorPrimary));
             }
             override fun onTabUnselected(tab: TabLayout.Tab) {}
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
+
+        //SET UP SPINNER
+        var spinner = findViewById<Spinner>(R.id.spTimeline)
+        val arrayAdapter: ArrayAdapter<CharSequence> = ArrayAdapter.createFromResource(this, R.array.timeline, android.R.layout.simple_spinner_item)
+        arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
+        spinner.adapter = arrayAdapter
+        spinner.onItemSelectedListener
     }
+
+    //OVERRIDE METHODS FOR SPINNER
+    override fun onNothingSelected(p0: AdapterView<*>?) {}
+
+    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {}
+
+    //SET CURRENT TAB ON START OF APPLICATION
+    override fun onStart() {
+        super.onStart()
+        vpView.currentItem = 3
+    }
+
+
 }

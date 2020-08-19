@@ -14,6 +14,7 @@ class TabsAdapter(private val context: Context, fm: FragmentManager, internal va
         when(position) {
             0 -> return FollowingFragment()
             1 -> return LocalFragment()
+            2 -> return GlobalFragment()
             else -> return GlobalFragment()
         }
     }
